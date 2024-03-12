@@ -38,9 +38,9 @@ def is_bitlink(headers, url):
 
 def main():
     load_dotenv()
-    apikey_bitly = os.getenv('APIKEY_BITLY')
+    bitly_token = os.getenv('BITLY_TOKEN')
     headers = {
-        "Authorization": f"Bearer {apikey_bitly}",
+        "Authorization": f"Bearer {bitly_token}",
     }
     parser = argparse.ArgumentParser(description='Сокращает ссылки и выводит количество переходов по ней')
     parser.add_argument('link', help='Введите ссылку:')

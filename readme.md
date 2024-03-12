@@ -16,7 +16,7 @@ pip install -r requirements.txt
 В папке с проектом не забудьте создать .env файл, где вы укажите ваш собственный токен Битли([Создать токен.](https://app.bitly.com/settings/api/))
 
 ```
-APIKEY_BITLY=ваш токен с bitly
+BITLY_TOKEN=ваш токен с bitly
 ```
 
 ## КАК ЗАПУСТИТЬ?
