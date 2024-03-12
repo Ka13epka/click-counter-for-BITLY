@@ -38,7 +38,7 @@ def is_bitlink(headers, url):
 
 def main():
     load_dotenv()
-    bitly_token = os.getenv('BITLY_TOKEN')
+    bitly_token = os.environ('BITLY_TOKEN')
     headers = {
         "Authorization": f"Bearer {bitly_token}",
     }
