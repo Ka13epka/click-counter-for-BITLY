@@ -38,20 +38,19 @@ def is_bitlink(headers, url):
 
 def main():
     load_dotenv()
-    bitly_token = os.environ('BITLY_TOKEN')
+    bitly_token = os.environ['BITLY_TOKEN']
     headers = {
         "Authorization": f"Bearer {bitly_token}",
     }
     parser = argparse.ArgumentParser(description='Сокращает ссылки и выводит количество переходов по ней')
     parser.add_argument('link', help='Введите ссылку:')
     args = parser.parse_args()
-    print(args.link)
 
-    parse_link = urlparse(args.link)
-    my_bitlink = f'{parse_link.netloc}{parse_link.path}'
+    link_parse = urlparse(args.link)
+    bitlink = f'{link_parse.netloc}{link_parse.path}'
     try:
         if is_bitlink(headers, my_bitlink):
-            print(count_clicks(headers, my_bitlink))
+            print(count_clicks(headers, bitlink))
         else:
             print(shorten_link(headers, args.link))    
     except requests.exceptions.HTTPError as error:
